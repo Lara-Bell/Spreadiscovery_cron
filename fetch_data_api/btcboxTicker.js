@@ -1,12 +1,13 @@
 const ccxt = require('ccxt');
 const axios = require('./axios');
+const moment = require('moment');
 
 module.exports = async function () {
   let btcbox = new ccxt.btcbox();
   let ticker = await btcbox.fetchTicker("BTC/JPY");
   ticker = {
     symbol: ticker.symbol,
-    datetime: ticker.datetime,
+    datetime: moment(ticker.datetime).utc().format('YYYY-MM-DD HH:mm:ss'),
     high: ticker.high,
     low: ticker.low,
     bid: ticker.bid,

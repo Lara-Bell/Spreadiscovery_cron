@@ -5,7 +5,6 @@ module.exports = axiosBase.create({
   headers: {
     'Accept': 'application/json',
     'ContentType': 'application/json',
-    'Authorization': config.ACCESS_TOKEN
   },
   responseType: 'json'
 });

@@ -11,7 +11,7 @@ module.exports = function(){
     let tickData = res.data.data;
     const ticker = {
       symbol: "BTC/JPY",
-      datetime: moment(tickData.timestamp).toISOString(),
+      datetime: moment(tickData.timestamp).utc().format('YYYY-MM-DD HH:mm:ss'),
       high: Number(tickData.high),
       low: Number(tickData.low),
       bid: Number(tickData.buy),
